@@ -1,5 +1,6 @@
 import { providers, utils, Wallet } from 'ethers'
 import { FlashbotsBundleConflictType, FlashbotsBundleProvider, FlashbotsGasPricing } from './index'
+require('dotenv').config()
 
 const FLASHBOTS_AUTH_KEY = process.env.FLASHBOTS_AUTH_KEY
 
@@ -12,7 +13,7 @@ const provider = new providers.JsonRpcProvider(
 const FLASHBOTS_EP = undefined
 // ===== Uncomment this for mainnet =======
 
-// ===== Uncomment this for Goerli =======
+// ===== Uncomment this for Goerli ======= 
 // const CHAIN_ID = 5
 // const provider = new providers.InfuraProvider(CHAIN_ID, process.env.INFURA_API_KEY)
 // const FLASHBOTS_EP = 'https://relay-goerli.flashbots.net/'

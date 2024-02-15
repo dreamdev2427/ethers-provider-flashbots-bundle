@@ -2,6 +2,7 @@ import { BigNumber, providers, Wallet } from 'ethers'
 import { FlashbotsBundleProvider, FlashbotsBundleResolution } from './index'
 import { TransactionRequest } from '@ethersproject/abstract-provider'
 import { v4 as uuidv4 } from 'uuid'
+require('dotenv').config()
 
 const FLASHBOTS_AUTH_KEY = process.env.FLASHBOTS_AUTH_KEY
 
@@ -109,8 +110,8 @@ async function main() {
       throw new Error(bundleSubmission.error.message)
     }
 
-    const cancelResult = await flashbotsProvider.cancelBundles(replacementUuid)
-    console.log('cancel response', cancelResult)
+    // const cancelResult = await flashbotsProvider.cancelBundles(replacementUuid)
+    // console.log('cancel response', cancelResult)
 
     const waitResponse = await bundleSubmission.wait()
     console.log(`Wait Response: ${FlashbotsBundleResolution[waitResponse]}`)
